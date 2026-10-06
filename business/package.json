@@ -1,0 +1,25 @@
+{
+  "name": "bumm-marala-management-system",
+  "version": "2.0.0",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "description": "Sistem manajemen BUMM Marala dengan SQLite dan izin server",
+  "scripts": {
+    "start": "node server/server.cjs",
+    "test": "node --test tests/system.test.cjs tests/snapshot.test.cjs tests/pos.test.cjs tests/pos-products.test.cjs tests/procurement.test.cjs tests/finance.test.cjs tests/contacts.test.cjs tests/password-vault.test.cjs tests/report-approvals.test.cjs tests/workspace-changes.test.cjs tests/pos-orders.test.cjs tests/read-efficiency.test.cjs tests/stock-history.test.cjs tests/pos-stock.test.cjs tests/bulk-edit.test.cjs tests/attendance.test.cjs",
+    "build": "node scripts/build-cloud.cjs",
+    "cloud:check": "wrangler deploy --dry-run --outdir dist/worker",
+    "cloud:dev": "wrangler dev",
+    "cloud:deploy": "wrangler deploy",
+    "cloud:export": "node scripts/export-cloud.cjs",
+    "test:cloud": "node --test tests/cloud.test.cjs",
+    "package:cloud": "node scripts/package-cloud.cjs"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "devDependencies": {
+    "miniflare": "5.20260918.0-alpha",
+    "wrangler": "4.135.0"
+  }
+}

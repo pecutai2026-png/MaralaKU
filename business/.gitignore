@@ -1,0 +1,23 @@
+data/
+node_modules/
+*.log
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/
+tests/artifacts/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+backups/
+private-exports/
+dist/
+.pnpm-store/
+.publish/
+.dev.vars.example.local
+
+# Isolated finance visual QA (no production data)
+.finance-qa/

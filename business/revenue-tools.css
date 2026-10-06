@@ -1,0 +1,1 @@
+.revenue-total-row td{background:var(--pale);font-weight:800;color:var(--blue);border-top:2px solid #b8d5f3}.revenue-total-row td:nth-child(3){font-size:16px}.dark .revenue-total-row td{border-color:#466487}.period-controls .unit-filter{min-width:155px}@media(max-width:600px){.period-controls .unit-filter{width:100%}}

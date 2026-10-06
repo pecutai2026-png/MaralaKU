@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bumm-marala",
+  "main": "cloudflare/worker.mjs",
+  "compatibility_date": "2026-09-22",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "build": {"command": "node scripts/build-cloud.cjs"},
+  "assets": {"directory": "./dist/public", "binding": "ASSETS", "run_worker_first": true},
+  "durable_objects": {
+    "bindings": [{"name": "MARALA_DB", "class_name": "MaralaDatabase"}]
+  },
+  "migrations": [{"tag": "v1", "new_sqlite_classes": ["MaralaDatabase"]}]
+}

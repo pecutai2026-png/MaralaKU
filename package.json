@@ -1,0 +1,1 @@
+{"name":"marala-local-platform","version":"1.0.0","private":true,"description":"Platform demo Marala lokal dengan database terpisah per usaha","engines":{"node":">=24"},"scripts":{"start":"node server.cjs","test":"node --test tests/platform.test.cjs tests/immediate-pos.test.cjs"}}

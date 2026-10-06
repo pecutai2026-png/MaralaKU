@@ -1,0 +1,138 @@
+
+#marala-preview{--m-bg:light-dark(#f5f7fb,#111923);--m-surface:light-dark(#ffffff,#1b2634);--m-text:light-dark(#17283c,#eaf1fa);--m-muted:light-dark(#65758a,#a6b7cc);--m-line:light-dark(#e3e9f1,#354357);--m-accent:light-dark(#1759a7,#8ebfff);--m-on:light-dark(#ffffff,#11243e);--m-soft:light-dark(#eaf2fd,#233c57);--m-good:light-dark(#176348,#8ae1bc);--m-warn:light-dark(#995519,#ffc48b);font:14px/1.55 'Segoe UI',sans-serif;color:var(--m-text)}
+#marala-preview *{box-sizing:border-box}#marala-preview button,#marala-preview input,#marala-preview select{font:inherit}#marala-preview button{cursor:pointer;border:1px solid var(--m-line);background:var(--m-surface);color:var(--m-text);border-radius:10px;padding:10px 15px;font-weight:600}#marala-preview button:hover{background:var(--m-soft)}#marala-preview button:disabled{opacity:.5;cursor:default}#marala-preview .primary{background:var(--m-accent);color:var(--m-on);border-color:var(--m-accent)}#marala-preview .primary:hover{filter:brightness(.95)}#marala-preview input,#marala-preview select{width:100%;padding:11px;border:1px solid var(--m-line);border-radius:9px;background:var(--m-surface);color:var(--m-text)}#marala-preview label{display:grid;gap:6px;color:var(--m-muted)}#marala-preview h1{font-size:30px;line-height:1.2;letter-spacing:-.8px;margin:10px 0}#marala-preview h2{font-size:22px;margin:0 0 8px}#marala-preview h3{font-size:16px;margin:0 0 10px}#marala-preview p{margin:8px 0}#marala-preview .muted{color:var(--m-muted)}#marala-preview .small{font-size:12px}#marala-preview .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}#marala-preview .between{justify-content:space-between}#marala-preview .panel{background:var(--m-surface);border:1px solid var(--m-line);border-radius:16px;padding:22px}#marala-preview .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}#marala-preview .two{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}#marala-preview .brand{font-weight:750;letter-spacing:2px;font-size:20px}#marala-preview .badge{display:inline-block;background:var(--m-soft);color:var(--m-accent);padding:4px 9px;border-radius:6px;font-size:12px}#marala-preview .good{color:var(--m-good)}#marala-preview .warn{color:var(--m-warn)}#marala-preview .top{padding:18px 110px 18px 22px;background:var(--m-surface);border:1px solid var(--m-line);border-radius:18px 18px 0 0}#marala-preview .canvas{background:var(--m-bg);padding:25px;border:1px solid var(--m-line);border-top:0;border-radius:0 0 18px 18px;min-height:550px}#marala-preview .hero{padding:22px 0 30px;max-width:640px}#marala-preview .choice{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-height:210px;text-align:left;padding:23px;background:var(--m-surface);border-radius:16px}#marala-preview .choice strong{font-size:19px}#marala-preview .choice i{width:26px;height:26px;color:var(--m-accent)}#marala-preview .choice .arrow{margin-top:auto;color:var(--m-accent)}#marala-preview .shell{display:grid;grid-template-columns:170px minmax(0,1fr);gap:24px}#marala-preview .side{display:flex;flex-direction:column;gap:7px}#marala-preview .side button{text-align:left;background:transparent;border-color:transparent}#marala-preview .side button.active{background:var(--m-soft);color:var(--m-accent)}#marala-preview .stat strong{display:block;font-size:28px;letter-spacing:-.5px;margin-top:7px}#marala-preview .tablewrap{overflow-x:auto}#marala-preview table{width:100%;border-collapse:collapse;text-align:left}#marala-preview th{color:var(--m-muted);font-size:12px;font-weight:600}#marala-preview td,#marala-preview th{padding:13px 10px;border-bottom:1px solid var(--m-line)}#marala-preview td:first-child{padding-left:0}#marala-preview .section{margin-top:22px}#marala-preview .bar{height:9px;background:var(--m-line);border-radius:6px;margin:7px 0 16px}#marala-preview .bar span{display:block;height:100%;background:var(--m-accent);border-radius:6px}#marala-preview .banner{background:var(--m-soft);color:var(--m-accent);border-radius:12px;padding:14px 18px;margin:15px 0}#marala-preview .steps{display:grid;gap:12px;margin-top:22px}#marala-preview .step{padding:12px 0;border-bottom:1px solid var(--m-line)}#marala-preview .form{display:grid;gap:15px}#marala-preview .toast{margin-top:14px;color:var(--m-good);min-height:22px}#marala-preview .products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}#marala-preview .product{text-align:left;min-height:92px}#marala-preview .product strong{display:block;margin:4px 0}#marala-preview .num{font-variant-numeric:tabular-nums}#marala-preview .privacy{border-top:1px solid var(--m-line);margin-top:24px;padding-top:16px}#marala-preview .heading{margin-bottom:20px}#marala-preview .detail{margin-top:20px;border-left:3px solid var(--m-accent);padding-left:18px}#marala-preview .check{display:flex;align-items:center;gap:9px}#marala-preview .check input{width:auto}#marala-preview .flow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}#marala-preview .flow span{color:var(--m-muted);font-size:12px}#marala-preview .flow .current{color:var(--m-accent);font-weight:600}@media(max-width:760px){#marala-preview .grid{grid-template-columns:1fr}#marala-preview .two{grid-template-columns:1fr}#marala-preview .shell{grid-template-columns:1fr}#marala-preview .side{flex-direction:row;flex-wrap:wrap}#marala-preview .canvas{padding:17px}#marala-preview .top{padding:16px 100px 16px 17px}#marala-preview h1{font-size:26px}#marala-preview .choice{min-height:160px}}@media(pointer:coarse){#marala-preview button{min-height:44px}}
+/* Marala identity: logo cyan, azure, royal blue and white. */
+#marala-preview{--m-bg:light-dark(#f5faff,#111e32);--m-surface:light-dark(#ffffff,#1b2d46);--m-text:light-dark(#172d4d,#edf5ff);--m-muted:light-dark(#657a95,#acbfd9);--m-line:light-dark(#dfebf7,#354c6a);--m-accent:light-dark(#075abd,#8ecfff);--m-on:light-dark(#ffffff,#102e52);--m-soft:light-dark(#eaf5ff,#243f60);--m-good:light-dark(#086b8b,#8fdded);--m-warn:light-dark(#915a2b,#edbe8b);--m-forest:light-dark(#064591,#123a69);--m-cream:#f3f9ff;--m-lime:#8be3ff;--m-shadow:light-dark(#172d4d12,#00000022);font-family:'Segoe UI',sans-serif;letter-spacing:-.15px}
+#marala-preview button{border-radius:12px;transition:background .15s,transform .15s,border-color .15s;cursor:inherit;font-weight:600}
+#marala-preview button:active{transform:translateY(1px)}
+#marala-preview button:focus-visible{outline:3px solid var(--m-accent);outline-offset:4px}
+#marala-preview .top{padding:23px 108px 22px 30px;border-radius:22px 22px 0 0;background:var(--m-bg)}
+#marala-preview .brand{font-size:23px;letter-spacing:-1px;display:flex;align-items:center;gap:10px;font-weight:750;text-transform:lowercase}
+#marala-preview .brand-symbol{display:grid;place-items:center;background:var(--m-accent);color:var(--m-on);width:36px;height:36px;border-radius:12px}
+#marala-preview .brand small{font-size:11px;letter-spacing:1px;margin-left:4px;font-weight:600;text-transform:uppercase;color:var(--m-muted)}
+#marala-preview .top .mode-switch{background:var(--m-surface);border:1px solid var(--m-line);padding:4px;border-radius:13px;gap:3px}
+#marala-preview .top button{border:0;background:transparent;padding:8px 11px;font-size:12px}
+#marala-preview .top button[aria-pressed=true]{background:var(--m-accent);color:var(--m-on)}
+#marala-preview .canvas{padding:30px;background:var(--m-bg);border-radius:0 0 22px 22px;min-height:620px}
+#marala-preview .landing{display:grid;grid-template-columns:1.15fr 1fr;gap:24px;align-items:center;padding:18px 0 36px}
+#marala-preview .eyebrow{font-size:11px;letter-spacing:1.7px;font-weight:650;text-transform:uppercase;color:var(--m-accent)}
+#marala-preview h1{font-size:38px;letter-spacing:-1.5px;line-height:1.13;font-weight:650}
+#marala-preview .landing h1{font-size:48px;max-width:520px;margin:17px 0 19px}
+#marala-preview .landing h1 em{font:italic 1.06em Georgia,serif;color:var(--m-accent);font-weight:400}
+#marala-preview .landing p{font-size:15px;max-width:395px;line-height:1.7}
+#marala-preview .trial-pill{display:inline-flex;align-items:center;gap:7px;background:var(--m-soft);padding:7px 12px;border-radius:100px;color:var(--m-accent);font-size:12px}
+#marala-preview .trial-pill:before{content:'';width:6px;height:6px;border-radius:50%;background:var(--m-accent)}
+#marala-preview .trust{margin-top:24px;display:flex;gap:16px;flex-wrap:wrap;font-size:11px;color:var(--m-muted)}
+#marala-preview .trust span{display:flex;align-items:center;gap:5px}
+#marala-preview .landing-art{position:relative;min-height:285px;background:var(--m-forest);border-radius:25px;padding:25px;color:var(--m-cream);isolation:isolate}
+#marala-preview .landing-art:before{content:'';position:absolute;width:170px;height:170px;border:1px solid #ffffff18;border-radius:50%;right:15px;top:20px;z-index:-1}
+#marala-preview .landing-art:after{content:'';position:absolute;width:220px;height:220px;border:1px solid #ffffff12;border-radius:50%;right:-8px;top:0;z-index:-1}
+#marala-preview .art-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#b6ddff}
+#marala-preview .mini-store{margin-top:23px;position:relative;border-radius:12px;background:#f1f8ff;padding:0 16px 16px;color:#164777;box-shadow:0 14px 28px #00000020;transform:rotate(-3deg);width:75%;min-height:178px}
+#marala-preview .awning{height:24px;background:repeating-linear-gradient(90deg,#80daff 0 22px,#0866c6 22px 44px);border-radius:10px 10px 5px 5px;margin:0 -16px 17px}
+#marala-preview .mini-store strong{font:italic 23px Georgia,serif;display:block;margin-bottom:9px}
+#marala-preview .store-shelf{display:flex;gap:8px;align-items:flex-end;height:45px;padding:0 8px 8px;border-bottom:3px solid #a4c4e3}
+#marala-preview .jar{background:#79c9ef;width:22px;height:30px;border-radius:5px 5px 3px 3px;border-top:5px solid #246aa8}
+#marala-preview .jar:nth-child(2){height:37px;background:#97b8dd}#marala-preview .jar:nth-child(3){height:24px}
+#marala-preview .mini-receipt{position:absolute;right:18px;bottom:22px;background:#ffffff;color:#164777;padding:17px;border-radius:10px;width:155px;box-shadow:0 12px 22px #00000024;transform:rotate(5deg)}
+#marala-preview .mini-receipt .receipt-line{display:flex;justify-content:space-between;font-size:10px;margin-top:9px;padding-bottom:8px;border-bottom:1px dashed #d4e5f5}
+#marala-preview .mini-receipt strong{font-size:20px;display:block;margin-top:7px}
+#marala-preview .mini-receipt .receipt-check{background:#e4f4ff;color:#0d609e;padding:5px 7px;border-radius:6px;font-size:10px;display:block;margin-top:10px}
+#marala-preview .choice-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:16px}
+#marala-preview .choice-heading h2{font-size:20px;margin:0;letter-spacing:-.5px}
+#marala-preview .choice{padding:0;border:1px solid var(--m-line);border-radius:18px;gap:0;min-height:270px;overflow:hidden;box-shadow:0 4px 15px var(--m-shadow);transition:transform .2s,box-shadow .2s}
+#marala-preview .choice:hover{transform:translateY(-4px);box-shadow:0 12px 24px var(--m-shadow);border-color:var(--m-accent);background:var(--m-surface)}
+#marala-preview .choice-art{display:flex;align-items:center;justify-content:center;position:relative;width:100%;height:100px;background:var(--m-soft);color:var(--m-accent)}
+#marala-preview .choice-art:before{content:'';width:62px;height:62px;border-radius:18px;background:var(--m-surface);position:absolute;transform:rotate(-9deg)}
+#marala-preview .choice-art svg{width:31px;height:31px;position:relative}
+#marala-preview .choice-body{padding:20px;display:flex;flex-direction:column;gap:9px;flex:1;width:100%}
+#marala-preview .choice strong{font-size:17px;letter-spacing:-.4px}
+#marala-preview .choice .muted{font-size:12px;line-height:1.6}
+#marala-preview .choice .arrow{display:flex;justify-content:space-between;align-items:center;margin-top:13px;padding-top:12px;border-top:1px solid var(--m-line);font-size:12px}
+#marala-preview .choice .arrow svg{width:16px;height:16px}
+#marala-preview .section{margin-top:24px}
+#marala-preview .panel{border-radius:18px;box-shadow:0 4px 16px var(--m-shadow);padding:24px}
+#marala-preview .badge{border-radius:100px;letter-spacing:.3px;padding:5px 10px;font-size:10px;font-weight:600}
+#marala-preview .register-layout{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;margin-top:22px;align-items:stretch}
+#marala-preview .register-story{background:var(--m-forest);color:var(--m-cream);border-radius:23px;padding:32px;position:relative}
+#marala-preview .register-story .eyebrow{color:var(--m-lime)}
+#marala-preview .register-story h1{font-size:39px;line-height:1.16;margin:25px 0 18px}
+#marala-preview .register-story h1 em{font:italic 1em Georgia,serif;color:var(--m-lime)}
+#marala-preview .register-story p{color:#bddcff;font-size:13px;line-height:1.75}
+#marala-preview .register-story .benefit{display:flex;align-items:flex-start;gap:11px;padding:15px 0;border-bottom:1px solid #ffffff18;font-size:13px}
+#marala-preview .benefit svg{color:var(--m-lime);flex-shrink:0}
+#marala-preview .register-story .story-footer{margin-top:29px;font:italic 20px Georgia,serif;color:#d2efff}
+#marala-preview .register-form{padding:28px}
+#marala-preview .register-form h2{font-size:23px;margin-bottom:5px}
+#marala-preview .register-form .form{margin-top:23px;gap:17px}
+#marala-preview .register-form button.primary{width:100%;padding:13px}
+#marala-preview input:focus{border-color:var(--m-accent);outline:2px solid var(--m-soft)}
+#marala-preview label{font-size:12px;color:var(--m-text);font-weight:500}
+#marala-preview .flow{gap:10px;align-items:center;margin:0}
+#marala-preview .flow span{display:flex;align-items:center;gap:7px}
+#marala-preview .flow b{border:1px solid var(--m-line);border-radius:50%;width:23px;height:23px;display:grid;place-items:center;font-size:11px;font-weight:500}
+#marala-preview .flow .current b{background:var(--m-accent);border-color:var(--m-accent);color:var(--m-on)}
+#marala-preview .shell{grid-template-columns:175px minmax(0,1fr);gap:26px;align-items:start}
+#marala-preview .side{background:var(--m-forest);border-radius:18px;padding:18px 10px;min-height:395px;color:var(--m-cream)}
+#marala-preview .side .small{color:#bddcff;padding:5px 10px;font-size:10px;letter-spacing:.4px}
+#marala-preview .side button{color:#d3e9ff;display:flex;align-items:center;gap:9px;padding:11px 10px;font-size:12px}
+#marala-preview .side button:hover{background:#ffffff12}
+#marala-preview .side button.active{background:var(--m-lime);color:#074577}
+#marala-preview .side button svg{width:16px;height:16px;flex-shrink:0}
+#marala-preview .stat{position:relative;min-height:138px}
+#marala-preview .stat strong{font-size:30px;line-height:1.2;margin:14px 0 7px;letter-spacing:-1px;color:var(--m-accent)}
+#marala-preview .stat .stat-icon{position:absolute;right:16px;top:16px;border-radius:10px;background:var(--m-soft);color:var(--m-accent);padding:7px;display:grid;place-items:center}
+#marala-preview .stat .stat-icon svg{width:15px;height:15px}
+#marala-preview .stat .muted:first-child{font-size:11px;display:block;max-width:calc(100% - 30px)}
+#marala-preview .stat .small{font-size:11px}
+#marala-preview .banner{border:1px solid var(--m-line);background:var(--m-surface);color:var(--m-text);padding:14px 17px;border-radius:14px;font-size:12px}
+#marala-preview .banner button{background:var(--m-accent);color:var(--m-on);font-size:12px}
+#marala-preview table{background:var(--m-surface);border-radius:15px;overflow:hidden}
+#marala-preview th{padding:15px 14px;background:var(--m-soft);font-size:10px;text-transform:uppercase;letter-spacing:.7px}
+#marala-preview td{padding:16px 14px;font-size:12px}
+#marala-preview td:first-child{padding-left:14px}
+#marala-preview tr:last-child td{border-bottom:0}
+#marala-preview td button{padding:7px 10px;font-size:11px}
+#marala-preview .avatar{display:inline-grid;place-items:center;width:31px;height:31px;border-radius:10px;background:var(--m-soft);color:var(--m-accent);font-size:11px;font-weight:650;flex-shrink:0}
+#marala-preview .person{display:flex;gap:10px;align-items:center}
+#marala-preview .heading h1{font-size:31px;margin:13px 0}
+#marala-preview .heading p{font-size:12px;max-width:510px}
+#marala-preview .product{position:relative;padding:20px 15px 15px;min-height:125px;background:var(--m-surface);box-shadow:0 3px 12px var(--m-shadow)}
+#marala-preview .product .product-icon{display:block;color:var(--m-accent);margin-bottom:9px}
+#marala-preview .product strong{font-size:13px}
+#marala-preview .product>span:last-child{font-size:12px;color:var(--m-accent)}
+#marala-preview .privacy{font-size:10px;line-height:1.6;opacity:.85}
+#marala-preview .privacy strong{font-weight:600;color:var(--m-accent)}
+#marala-preview .toast:empty{min-height:0;margin:0}
+#marala-preview .toast:not(:empty){background:var(--m-soft);border-radius:10px;padding:12px;font-size:12px}
+#marala-preview .detail{background:var(--m-surface);padding:20px;border-radius:12px;border-left-width:4px}
+#marala-preview .admin-label{display:flex;gap:7px;align-items:center}
+#marala-preview hr{border:0;border-top:1px solid var(--m-line);margin:18px 0}
+#marala-preview .steps{gap:4px}
+#marala-preview .step{padding:16px 0}
+@media(max-width:850px){#marala-preview .landing h1{font-size:40px}#marala-preview .canvas{padding:24px}#marala-preview .grid{gap:12px}#marala-preview .shell{grid-template-columns:145px minmax(0,1fr);gap:18px}#marala-preview .stat{padding:17px}#marala-preview .register-story{padding:25px}}
+@media(max-width:760px){#marala-preview .landing,#marala-preview .register-layout,#marala-preview .two{grid-template-columns:1fr}#marala-preview .grid{grid-template-columns:repeat(3,minmax(0,1fr))}#marala-preview .shell{grid-template-columns:1fr}#marala-preview .side{min-height:0;flex-direction:row;flex-wrap:wrap}#marala-preview .side>.small{width:100%}#marala-preview .landing-art{min-height:270px}#marala-preview .choice-body{padding:15px}#marala-preview .choice strong{font-size:15px}#marala-preview .top{padding:20px 105px 20px 22px}#marala-preview .register-story h1{font-size:33px}}
+@media(max-width:540px){#marala-preview .grid{grid-template-columns:1fr}#marala-preview .landing h1{font-size:37px}#marala-preview .landing{gap:24px}#marala-preview .canvas{padding:20px 16px}#marala-preview .top{padding:20px 100px 18px 16px}#marala-preview .top>.row{gap:15px}#marala-preview .brand small{display:none}#marala-preview .mode-switch{flex-wrap:wrap}#marala-preview .top button{padding:8px;font-size:11px}#marala-preview .choice{display:grid;grid-template-columns:80px 1fr;min-height:160px}#marala-preview .choice-art{height:100%;min-height:160px}#marala-preview .choice-body{padding:17px}#marala-preview .choice-art:before{width:48px;height:48px}#marala-preview .choice strong{font-size:17px}#marala-preview .choice-heading{align-items:flex-start;flex-direction:column}#marala-preview .stat{min-height:115px}#marala-preview .flow{gap:7px}#marala-preview .flow span{font-size:10px}#marala-preview .register-story{padding:24px}#marala-preview .register-form{padding:20px}#marala-preview .heading h1{font-size:29px}#marala-preview .landing-art{min-height:270px}#marala-preview .mini-receipt{width:135px;right:12px}#marala-preview .two{gap:15px}#marala-preview input{font-size:16px}}
+@media(prefers-reduced-motion:reduce){#marala-preview button{transition:none}#marala-preview .choice:hover{transform:none}}
+
+#marala-preview .brand-symbol{width:45px;height:45px;background:#ffffff;border:1px solid var(--m-line);border-radius:11px;overflow:hidden;padding:3px}
+#marala-preview .brand-symbol img{width:100%;height:100%;object-fit:contain;display:block}
+#marala-preview .primary,#marala-preview .top button[aria-pressed=true],#marala-preview .banner button{background:linear-gradient(115deg,#0876d6,#0754be);color:#ffffff}
+#marala-preview .landing h1 em{color:light-dark(#0879c8,#75d2ff)}
+#marala-preview .landing-art{background:linear-gradient(135deg,#08a6d8,#0754be)}
+#marala-preview .register-story,#marala-preview .side{background:linear-gradient(160deg,#075bb9,#063c83)}
+#marala-preview .choice-art{height:175px;background:light-dark(#dff4ff,#243f60);overflow:hidden}
+#marala-preview .choice-art:before{display:none}
+#marala-preview .choice-art img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s}
+#marala-preview .choice:hover .choice-art img{transform:scale(1.035)}
+#marala-preview .choice{min-height:330px}
+#marala-preview .bar span{background:linear-gradient(90deg,#09b5dd,#0754be)}
+@media(max-width:540px){#marala-preview .choice{display:flex;min-height:0}#marala-preview .choice-art{height:170px;min-height:0}#marala-preview .choice-body{padding:19px}#marala-preview .choice strong{font-size:18px}}
+@media(prefers-reduced-motion:reduce){#marala-preview .choice-art img{transition:none}}
+
+body{margin:0;background:#edf4fc;font-family:'Segoe UI',sans-serif}#marala-preview{max-width:1140px;margin:24px auto}#marala-preview a{color:var(--m-accent)}#marala-preview .brand{text-decoration:none;color:var(--m-text)}#marala-preview .button{display:inline-flex;justify-content:center;align-items:center;border:1px solid var(--m-line);background:var(--m-surface);border-radius:12px;padding:10px 15px;text-decoration:none;font-weight:600;color:var(--m-text)}#marala-preview .button.primary{background:linear-gradient(115deg,#0876d6,#0754be);color:white}#marala-preview a.choice{text-decoration:none;color:var(--m-text);display:flex}#marala-preview .mode-switch a{font-size:12px;text-decoration:none;padding:8px 11px}#marala-preview .admin-welcome{margin-bottom:22px}#marala-preview .error{color:#b03727;background:#fff1ee}#marala-preview .form>button{justify-self:start}#marala-preview .register-form .form>button{justify-self:stretch}#marala-preview details{border:1px solid var(--m-line);padding:13px;border-radius:10px}#marala-preview summary{cursor:pointer;color:var(--m-accent)}#marala-preview .side{background:linear-gradient(160deg,#075bb9,#063c83)}#marala-preview #settings>button{justify-self:start}#marala-preview input[type=checkbox]{accent-color:#075abd}@media(max-width:760px){#marala-preview{margin:10px}#marala-preview .top{padding-right:22px}#marala-preview .grid{grid-template-columns:1fr}#marala-preview .register-layout .two{grid-template-columns:1fr}}@media(prefers-color-scheme:dark){body{background:#101a2a}} 
+/* Use the whole browser viewport; keep content comfortably readable. */
+body{background:#f5faff}#marala-preview{width:100%;max-width:none;margin:0;min-height:100dvh;background:var(--m-bg)}#marala-preview .top{position:sticky;top:0;z-index:4;padding:18px clamp(20px,4vw,72px);border:0;border-bottom:1px solid var(--m-line);border-radius:0;background:var(--m-bg)}#marala-preview .top>.row{max-width:1440px;margin:auto}#marala-preview .canvas{min-height:calc(100dvh - 90px);border:0;border-radius:0;padding:36px clamp(20px,4vw,72px) 80px;background:var(--m-bg)}#marala-preview #screen,#marala-preview .privacy{max-width:1440px;margin-left:auto;margin-right:auto}#marala-preview .register-layout{max-width:1180px;margin:12px auto}#marala-preview .register-story{padding:35px}#marala-preview .privacy{margin-top:35px}#marala-preview .mode-switch{gap:5px;background:transparent;border:0;padding:0}
+@media(max-width:760px){#marala-preview{margin:0}#marala-preview .top{padding:15px 20px}#marala-preview .canvas{padding:25px 20px 90px}#marala-preview .top>.row{gap:14px}#marala-preview .register-story{padding:27px}#marala-preview .mode-switch a{font-size:11px;padding:8px}#marala-preview .register-layout{margin-top:0}}@media(prefers-color-scheme:dark){body{background:#f5faff}}
+#marala-preview .brand-text{display:flex;flex-direction:column;gap:3px;min-width:0}#marala-preview .brand-text strong{font-size:25px;letter-spacing:-1px;line-height:1.2;color:#0756aa}#marala-preview .brand-text small{font-size:11px;letter-spacing:.1px;text-transform:none;color:#507a9d;display:block;margin:0}#marala-preview .brand{gap:12px}#marala-preview .phone-error{font-size:12px;color:#bb3a35;line-height:1.5;margin-top:2px;text-align:left}#marala-preview input[aria-invalid=true]{border-color:#d16b65;background:#fff7f6}#marala-preview #message:empty{display:none}@media(max-width:600px){#marala-preview .brand-text strong{font-size:23px}#marala-preview .brand-text small{font-size:9px;max-width:190px}#marala-preview .brand-text{gap:2px}}
+#marala-preview .brand-text strong{text-transform:none}#marala-preview .brand-text small{text-transform:none}
