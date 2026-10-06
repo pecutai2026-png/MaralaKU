@@ -1,1 +1,21 @@
-{"name":"marala-local-platform","version":"1.0.0","private":true,"description":"Platform demo Marala lokal dengan database terpisah per usaha","engines":{"node":">=24"},"scripts":{"start":"node server.cjs","test":"node --test tests/platform.test.cjs tests/immediate-pos.test.cjs"}}
+{
+  "name": "marala-local-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Platform demo Marala lokal dengan database terpisah per usaha",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.cjs",
+    "test": "node --test tests/platform.test.cjs tests/immediate-pos.test.cjs",
+    "build": "node scripts/build-cloud.cjs",
+    "cloud:check": "wrangler deploy --dry-run --outdir dist/worker",
+    "cloud:dev": "wrangler dev",
+    "test:cloud": "node --test tests/cloud-platform.test.cjs"
+  },
+  "devDependencies": {
+    "miniflare": "5.20261001.0-alpha",
+    "wrangler": "4.147.0"
+  }
+}

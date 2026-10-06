@@ -2,3 +2,9 @@ data/
 *.log
 tests/artifacts/
 node_modules/
+dist/
+.wrangler/
+.dev.vars
+.env
+.env.*
+cloudflare-setup-secret.txt
