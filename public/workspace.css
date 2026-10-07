@@ -72,3 +72,91 @@ input,select,textarea{background:#f7f9fc;border:1px solid transparent;border-rad
  .report-row{grid-template-columns:minmax(0,1fr)}
  .report-row>.marala-money,.report-row>strong{justify-self:start;white-space:nowrap}
 }
+
+/* MaralaKu overview: real data with the visual language of the campaign. */
+.marala-overview{max-width:1180px;margin:0 auto}
+.overview-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:3px 0 22px}
+.overview-eyebrow{font-size:10px;font-weight:700;letter-spacing:2px;color:#7392ab}
+.overview-heading h2{font-size:31px;letter-spacing:-1px;margin:7px 0;color:#123c61}
+.overview-heading p{font-size:13px;margin:0;color:#7a91a6}
+.greeting-dot{color:#0bb4dc;font-size:22px;margin-left:5px}
+.overview-date{font-size:12px;color:#65839d;background:#fff;padding:10px 16px;border-radius:99px;white-space:nowrap}
+.dashboard-period{display:flex;justify-content:space-between;align-items:start;gap:15px;color:#6686a0;font-size:11px;margin-bottom:16px}
+.dashboard-period .marala-filters{margin:0;max-width:650px}
+.overview-metrics.metrics{background:none;box-shadow:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 30px}
+.overview-metrics .metric{border-radius:23px;background:#fff;box-shadow:0 5px 25px #1d639408;min-height:125px;padding:24px;border:1px solid #edf3f8;overflow:visible}
+.overview-metrics .metric strong{font-size:clamp(17px,1.65vw,24px);margin:10px 0 6px;color:#175986;display:block;line-height:1.35}
+.overview-metrics .metric small{display:block;font-size:11px;color:#8298a9}
+.overview-metrics .metric .muted:before{display:none}
+.overview-metrics .overview-revenue{grid-column:1/-1;background:radial-gradient(circle at 85% 30%,#24caed55,transparent 40%),linear-gradient(110deg,#0667d6,#08add7);color:#fff;border:0;padding:28px 32px;position:relative;min-height:190px;overflow:hidden}
+.overview-revenue:after{content:'';position:absolute;right:220px;bottom:-80px;width:210px;height:210px;border:28px solid #ffffff0d;border-radius:50%;pointer-events:none}
+.overview-revenue .metric-heading{display:flex;gap:15px;align-items:center;color:#d9f3ff;font-size:13px}
+.overview-revenue .metric-heading svg{width:23px;height:23px}
+.overview-metrics .overview-revenue strong{color:#fff;font-size:35px;margin:12px 0 8px;letter-spacing:-1px}
+.overview-metrics .overview-revenue small{color:#d1f2ff}
+.overview-start{position:absolute;right:32px;bottom:30px;border:0;background:white;color:#067ac4;border-radius:99px;padding:14px 22px;font-weight:650;display:flex;align-items:center;gap:20px;cursor:pointer}
+.overview-section-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.overview-section-heading h3{font-size:16px;color:#204a6a;margin:0}
+.overview-section-heading>span{font-size:11px;color:#8ca2b3}
+.shortcut-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:13px;margin-bottom:30px}
+.overview-shortcut{border:1px solid #e9f1f7;background:#fff;border-radius:20px;display:flex;flex-direction:column;align-items:center;gap:12px;padding:22px 10px;font-size:12px;font-weight:600;color:#34607f;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.overview-shortcut:hover{background:#fff;transform:translateY(-3px);box-shadow:0 10px 24px #107cc115}
+.shortcut-icon{display:grid;place-items:center;border-radius:16px;width:48px;height:48px;background:linear-gradient(145deg,#e8f9ff,#d6edff);color:#077fcb}
+.shortcut-icon svg{width:26px;height:26px;stroke-width:1.8}
+.overview-shortcut:nth-child(2) .shortcut-icon{background:#e5f9f5;color:#14a491}
+.overview-shortcut:nth-child(3) .shortcut-icon{background:#fff3df;color:#d49b39}
+.overview-shortcut:nth-child(4) .shortcut-icon{background:#eef0ff;color:#8386cc}
+.overview-detail-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:22px;align-items:stretch}
+.overview-detail-grid .monthly-revenue{margin:0;padding:25px;border-radius:24px;border:1px solid #edf3f8;box-shadow:none;background:#fff;min-width:0}
+.overview-detail-grid .monthly-revenue h3{font-size:17px;color:#24516e}
+.overview-detail-grid .monthly-revenue>p{font-size:11px;max-width:420px;color:#859bad}
+.overview-detail-grid .monthly-bars{min-height:210px;padding-top:25px;gap:18px;scrollbar-width:thin}
+.overview-detail-grid .monthly-bar{min-width:110px;flex:1}
+.overview-detail-grid .monthly-bar strong{font-size:11px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.overview-detail-grid .monthly-column{height:150px;background:repeating-linear-gradient(to top,#edf4fa 0,#edf4fa 1px,transparent 1px,transparent 37px)}
+.overview-detail-grid .monthly-column i{width:36px;border-radius:10px 10px 4px 4px;background:linear-gradient(to top,#0879d1,#22c6df)}
+.overview-attention{padding:28px 25px;border-radius:24px;background:linear-gradient(150deg,#e9f8ff,#f4faff);border:1px solid #dceff9}
+.overview-attention h3{font-size:20px;line-height:1.4;color:#225474;margin:10px 0 24px}
+.attention-item{display:flex;gap:12px;align-items:flex-start;margin:20px 0;min-width:0}
+.attention-item>div{min-width:0}
+.attention-item strong{display:block;font-size:12px;color:#345f7e;line-height:1.6}
+.attention-item div>span{display:block;font-size:11px;color:#7897ad;margin-top:4px}
+.attention-icon{background:#fff;color:#079acf;display:grid;place-items:center;border-radius:13px;width:38px;height:38px;flex-shrink:0}
+.overview-note{font-size:11px;line-height:1.8;color:#7b9bb0;margin:25px 0 0;border-top:1px solid #d6e9f3;padding-top:18px}
+.overview-breakdown{margin-top:22px;border-radius:20px;background:#fff;border:1px solid #edf3f8;padding:20px 25px}
+.overview-breakdown>summary{display:flex;justify-content:space-between;font-size:12px;color:#577b98;cursor:pointer;list-style:none}
+#marala-mobile-nav{display:none}
+.dark .overview-heading h2,.dark .overview-section-heading h3{color:#d5edf9}
+.dark .overview-metrics .metric,.dark .overview-detail-grid .monthly-revenue,.dark .overview-shortcut,.dark .overview-breakdown{background:#193247;border-color:#294457}
+.dark .overview-metrics .metric strong{color:#7bd7f8}.dark .overview-metrics .overview-revenue{background:linear-gradient(110deg,#0864b1,#0794b1)}.dark .overview-metrics .overview-revenue strong{color:#fff}
+.dark .overview-attention{background:#1a3e52;border-color:#285065}.dark .attention-item strong,.dark .overview-attention h3,.dark .overview-detail-grid .monthly-revenue h3{color:#b6dfef}.dark .overview-shortcut{color:#bedbea}.dark .overview-date{background:#193247;color:#9fbfd2}
+@media(min-width:1051px){.shell{grid-template-columns:240px minmax(0,1fr)}.sidebar{width:212px;padding:23px 12px}.sidebar .brand{font-size:15px}.nav a,.nav-section>summary{font-size:12px;padding:12px}.content{padding:25px 32px 45px}}
+@media(max-width:800px){.shortcut-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.overview-detail-grid{grid-template-columns:minmax(0,1fr)}.overview-metrics .metric{padding:19px}.overview-metrics .metric strong{font-size:17px}.overview-start{position:static;margin-top:18px;display:inline-flex}.overview-metrics .overview-revenue{padding:25px}}
+@media(max-width:600px){
+ .overview-heading{align-items:start;margin:0 0 21px}.overview-heading h2{font-size:27px}.overview-heading p{font-size:12px}.overview-date{display:none}
+ .overview-section-heading>span{display:none}.dashboard-period{font-size:10px}.dashboard-period .marala-filters>summary{font-size:10px}
+ .overview-metrics.metrics{grid-template-columns:minmax(0,1fr);gap:0;background:#fff;border-radius:25px;margin-bottom:26px;overflow:hidden}
+ .overview-metrics .metric{padding:17px 23px;min-height:0;border-radius:0;box-shadow:none;border:0;border-bottom:1px solid #edf3f8}
+ .overview-metrics .metric:last-child{border:0}.overview-metrics .metric strong{font-size:20px;margin:6px 0 4px}
+ .overview-metrics .overview-revenue{padding:25px 23px;border-radius:25px;min-height:0;border:0}
+ .overview-metrics .overview-revenue strong{font-size:clamp(18px,5.6vw,25px);letter-spacing:-.6px;margin:12px 0 7px}
+ .overview-metrics .metric .muted{font-size:11px}.overview-metrics .metric small{font-size:10px}
+ .overview-start{padding:10px 16px;font-size:11px;margin-top:18px;gap:14px}
+ .shortcut-grid{gap:10px;margin-bottom:25px}.overview-shortcut{padding:15px 6px;border-radius:17px;font-size:11px;gap:9px}.shortcut-icon{width:43px;height:43px;border-radius:14px}
+ .overview-detail-grid .monthly-revenue{padding:21px 18px}.overview-attention{padding:24px 21px}.overview-attention h3{font-size:18px}
+ .overview-breakdown{padding:18px}.overview-detail-grid .monthly-bar{min-width:120px}
+ .main>.content{padding-bottom:115px}
+ #marala-mobile-nav{position:fixed;display:flex;align-items:center;justify-content:space-around;bottom:0;left:0;right:0;padding:9px 7px calc(10px + env(safe-area-inset-bottom));background:#ffffffed;border-top:1px solid #dceaf5;backdrop-filter:blur(16px);z-index:6;box-shadow:0 -6px 25px #28557806}
+ #marala-mobile-nav button{border:0;background:transparent;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:5px;font-size:10px;padding:7px 5px;color:#88a0b5;min-width:48px;min-height:48px;flex:1;cursor:pointer}
+ #marala-mobile-nav button.active{background:#e8f7ff;color:#078acc;font-weight:650}
+ #marala-mobile-nav button svg{width:22px;height:22px}
+ body:has(#marala-mobile-nav) .marala-wa-float{bottom:calc(96px + env(safe-area-inset-bottom))}
+ body:has(#marala-mobile-nav) .pos-mobile-checkout{bottom:calc(82px + env(safe-area-inset-bottom));z-index:5}
+ body:has(#marala-mobile-nav):has(.pos-mobile-checkout) .marala-wa-float{bottom:calc(166px + env(safe-area-inset-bottom))}
+ .dark #marala-mobile-nav{background:#13293bef;border-color:#2c4355}.dark #marala-mobile-nav button.active{background:#16445d;color:#84d9ff}
+ .dark .overview-metrics.metrics{background:#193247}
+ body:has(.modal-layer.show) #marala-mobile-nav,body:has(#marala-guide-layer) #marala-mobile-nav{visibility:hidden}
+ body:has(.sidebar.mobile-open) #marala-mobile-nav{visibility:hidden}
+}
+@media(prefers-reduced-motion:reduce){.overview-shortcut{transition:none}}
+@media print{#marala-mobile-nav,.overview-shortcuts,.overview-start{display:none!important}.overview-metrics .overview-revenue{background:white!important;color:black!important}.overview-metrics .overview-revenue strong{color:black!important}}
