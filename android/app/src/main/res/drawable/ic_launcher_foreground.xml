@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tiga lengkung bertingkat, mengikuti bentuk logo Marala. Area aman ikon adaptif: 21..87. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M30,82 L30,49 Q30,41 41,35 L54,28 L67,35 Q78,41 78,49 L78,82"
+        android:strokeColor="@color/brand_light"
+        android:strokeWidth="6"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M39.5,82 L39.5,53 Q39.5,47 47,43 L54,39.5 L61,43 Q68.5,47 68.5,53 L68.5,82"
+        android:strokeColor="#118DDD"
+        android:strokeWidth="5"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M48,82 L48,57 Q48,53 51.5,51 L54,49.8 L56.5,51 Q60,53 60,57 L60,82"
+        android:strokeColor="@color/brand"
+        android:strokeWidth="4"
+        android:strokeLineJoin="round" />
+</vector>

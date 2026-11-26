@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+}
+
+def appUrl = (project.findProperty('maralaUrl') ?: 'https://maralaku.maralaku.workers.dev').toString().replaceAll('/+$', '')
+def appHost = new URI(appUrl).host
+// Kunci tanda tangan diambil dari variabel lingkungan (GitHub Secrets). Tanpa kunci, APK ditandatangani kunci debug.
+def keystorePath = System.getenv('MARALA_KEYSTORE')
+
+android {
+    namespace 'id.marala.app'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'id.marala.app'
+        minSdk 26
+        targetSdk 35
+        versionCode Integer.parseInt(project.findProperty('maralaVersionCode') ?: '1')
+        versionName = (project.findProperty('maralaVersionName') ?: '1.0').toString()
+        buildConfigField 'String', 'APP_URL', "\"${appUrl}\""
+        buildConfigField 'String', 'APP_HOST', "\"${appHost}\""
+    }
+
+    signingConfigs {
+        release {
+            if (keystorePath && file(keystorePath).exists()) {
+                storeFile file(keystorePath)
+                storePassword System.getenv('MARALA_KEYSTORE_PASSWORD')
+                keyAlias System.getenv('MARALA_KEY_ALIAS')
+                keyPassword System.getenv('MARALA_KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig = (keystorePath && file(keystorePath).exists()) ? signingConfigs.release : signingConfigs.debug
+        }
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

@@ -23,6 +23,10 @@ Pertama kali, buka halaman Admin BUMM dan buat nama, email, serta password sendi
 - Halaman publik usaha di `/u/{kode-usaha}`: etalase, lacak pesanan (`/pesanan/{token}`), pendaftaran event (`/event/{id}`), e-tiket (`/tiket/{kode}`), sertifikat, booking, dan laporan (`/laporan`). QR dibuat oleh `public/qr.js` tanpa library luar.
 - Belum tersedia: payment gateway, notifikasi WhatsApp otomatis (yang ada tombol pembuka chat WA), kursi bernomor, SHU koperasi, satuan bertingkat, nomor seri/IMEI, dan beberapa rencana lain yang ditandai "menyusul" di pendaftaran.
 
+## Aplikasi Android
+
+Folder `android/` berisi aplikasi Android yang membuka MaralaKU online di layar penuh. APK dibuat otomatis oleh GitHub Actions (`.github/workflows/android-apk.yml`) dan diterbitkan di Releases. Panduan lengkapnya ada di `android/README.md`.
+
 ## Fitur
 
 - Pilihan toko, kafe/kuliner, atau jasa. Warna mengikuti logo Marala dan setiap pilihan memakai ilustrasi tersimpan lokal. Panel pelanggan tidak menampilkan link Admin BUMM; admin memiliki halaman masuk sendiri di `/admin`.
