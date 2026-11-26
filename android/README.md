@@ -13,7 +13,7 @@ APK dibuat otomatis oleh GitHub Actions. Komputer tidak perlu Android Studio.
 3. Buka **Releases** → **MaralaKU Android (terbaru)**, lalu unduh `MaralaKU.apk`. File yang sama juga ada di bagian **Artifacts** pada halaman run.
 4. Kirim file APK ke HP (WhatsApp, Google Drive, atau kabel), buka, lalu pilih **Pasang**. Bila diminta, izinkan pemasangan dari sumber tidak dikenal.
 
-Minimal Android 8.0.
+Minimal Android 6.0.
 
 ## Yang sudah ditangani aplikasi
 

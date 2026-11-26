@@ -55,6 +55,15 @@ jobs:
       - name: Beri nama file
         run: cp android/app/build/outputs/apk/release/app-release.apk MaralaKU.apk
 
+      # Memastikan APK utuh dan bertanda tangan sebelum diterbitkan; hasilnya ikut dicatat di Releases.
+      - name: Periksa APK
+        run: |
+          BT="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+          unzip -l MaralaKU.apk
+          "$BT/aapt2" dump badging MaralaKU.apk | grep -E "^(package|sdkVersion|targetSdkVersion|application-label|launchable)" | tee apk-info.txt
+          "$BT/apksigner" verify --verbose --min-sdk-version 23 MaralaKU.apk | grep -E "Verifies|Verified using" | tee -a apk-info.txt
+          echo "Ukuran: $(stat -c %s MaralaKU.apk) byte" | tee -a apk-info.txt
+
       - uses: actions/upload-artifact@v5
         with:
           name: MaralaKU-apk
@@ -67,5 +76,10 @@ jobs:
           gh release delete android-terbaru --yes --cleanup-tag || true
           gh release create android-terbaru MaralaKU.apk \
             --title "MaralaKU Android (terbaru)" \
-            --notes "APK dibuat otomatis dari commit ${GITHUB_SHA::7}. Unduh MaralaKU.apk di HP Android, buka, lalu pilih Pasang. Jika muncul peringatan sumber tidak dikenal, izinkan pemasangan dari browser/File Manager." \
+            --notes "APK dibuat otomatis dari commit ${GITHUB_SHA::7}. Unduh MaralaKU.apk di HP Android (minimal Android 6.0), buka, lalu pilih Pasang. Jika muncul peringatan sumber tidak dikenal, izinkan pemasangan dari browser/File Manager.
+
+          Hasil pemeriksaan:
+          \`\`\`
+          $(cat apk-info.txt)
+          \`\`\`" \
             --target "$GITHUB_SHA"

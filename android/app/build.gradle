@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId 'id.marala.app'
-        minSdk 26
+        minSdk 23
         targetSdk 35
         versionCode Integer.parseInt(project.findProperty('maralaVersionCode') ?: '1')
         versionName = (project.findProperty('maralaVersionName') ?: '1.0').toString()
@@ -31,6 +31,9 @@ android {
             }
         }
     }
+
+    // Tanda tangan v1 + v2 agar bisa dipasang di Android lama maupun baru.
+    signingConfigs.all { enableV1Signing true; enableV2Signing true }
 
     buildTypes {
         release {
