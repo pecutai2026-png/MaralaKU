@@ -1,7 +1,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'dist','public');
 fs.mkdirSync(out,{recursive:true});
-const publicFiles=['index.html','admin.html','platform.js','platform.css','workspace.js','workspace.css','workspace-menu.js','contact.js','contact.css','packages.js','packages.css'];
+const publicFiles=['index.html','shop.html','lines.js','shop.js','shop.css','qr.js','modules-ui.js','admin.html','platform.js','platform.css','workspace.js','workspace.css','workspace-menu.js','contact.js','contact.css','packages.js','packages.css'];
 const businessFiles=['integrated.js','pos-ui.js','bulk-edit.js','attendance-ui.js','styles.css','integrated.css','icon.svg'];
 const expected=new Set([...publicFiles,...businessFiles,'workspace.html','sw.js','assets']);
 for(const name of fs.readdirSync(out))if(!expected.has(name))throw Error('Unexpected public asset: '+name);

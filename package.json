@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server.cjs",
-    "test": "node --test tests/platform.test.cjs tests/immediate-pos.test.cjs",
+    "test": "node --test tests/platform.test.cjs tests/immediate-pos.test.cjs tests/lines.test.cjs tests/modules.test.cjs",
     "build": "node scripts/build-cloud.cjs",
     "cloud:check": "wrangler deploy --dry-run --outdir dist/worker",
     "cloud:dev": "wrangler dev",

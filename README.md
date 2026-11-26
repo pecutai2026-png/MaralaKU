@@ -13,6 +13,16 @@ Jalankan `Jalankan-Marala.ps1` dari folder ini dengan PowerShell, atau jalankan 
 
 Pertama kali, buka halaman Admin BUMM dan buat nama, email, serta password sendiri (minimal 10 karakter). Tidak ada akun atau password bawaan. Admin BUMM mengelola platform; pemilik usaha memiliki akun terpisah. Untuk mencoba sebagai pelanggan, keluar dari admin atau gunakan jendela privat, pilih jenis usaha, lalu daftar.
 
+## Lini usaha, cara jualan, dan modul
+
+- `public/lines.js` berisi 131 lini usaha dalam 14 kategori (ritel, kuliner, jasa, sewa, event, wisata, pendidikan, kesehatan, ibadah & sosial, desa & koperasi, ternak, tani, produksi, energi). Setiap lini menumpang pada mesin `toko`, `kafe`, atau `jasa`, lalu mengatur menu, istilah, data contoh, dan fitur bawaan. Menambah lini cukup satu baris `L(...)`.
+- Pendaftaran tiga langkah: pilih lini, pilih cara jualan (Kasir saja, Online saja, Kasir + Online), lalu buat akun. Lini dan cara jualan bisa diganti di halaman Akun.
+- Fitur tambahan (Pengaturan → Fitur), disimpan di `business/server/modules.cjs` (tabel `mod_records`) sehingga sama di server lokal dan cloud:
+  - Etalase & pesanan online: pesanan diterima masuk antrian kasir (atau invoice untuk mesin jasa); saat selesai, omzet dan stok tercatat. Stok bersama dengan kasir.
+  - Tagihan berulang, booking & jadwal (cek bentrok, komisi), event & tiket (kuota, formulir, e-tiket QR, check-in, sertifikat), laporan publik, data per ekor, siklus produksi (FCR), anggota & saldo, komisi karyawan, produksi & batch (potong bahan, HPP, kedaluwarsa), barcode (kamera atau scanner USB), dan varian produk.
+- Halaman publik usaha di `/u/{kode-usaha}`: etalase, lacak pesanan (`/pesanan/{token}`), pendaftaran event (`/event/{id}`), e-tiket (`/tiket/{kode}`), sertifikat, booking, dan laporan (`/laporan`). QR dibuat oleh `public/qr.js` tanpa library luar.
+- Belum tersedia: payment gateway, notifikasi WhatsApp otomatis (yang ada tombol pembuka chat WA), kursi bernomor, SHU koperasi, satuan bertingkat, nomor seri/IMEI, dan beberapa rencana lain yang ditandai "menyusul" di pendaftaran.
+
 ## Fitur
 
 - Pilihan toko, kafe/kuliner, atau jasa. Warna mengikuti logo Marala dan setiap pilihan memakai ilustrasi tersimpan lokal. Panel pelanggan tidak menampilkan link Admin BUMM; admin memiliki halaman masuk sendiri di `/admin`.

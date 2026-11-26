@@ -5,6 +5,7 @@ import api from '../business/server/api.cjs';
 import sqlite from '../business/cloudflare/sqlite.cjs';
 import snapshot from '../business/server/snapshot.cjs';
 import seedModule from '../seed.cjs';
+import modulesLib from '../business/server/modules.cjs';
 import platformModule from './platform.cjs';
 import transport from './transport.cjs';
 
@@ -32,6 +33,7 @@ export class MaralaTenant extends DurableObject {
    const {action,data}=JSON.parse(bytes.toString());let result;
    if(action==='create')result=this.store.tx(()=>{if(this.db.prepare('SELECT count(*) n FROM users').get().n)domain.fail('Usaha sudah tersedia.',409);const user=this.store.saveUser({name:data.ownerName,username:data.username,password:data.password,role:'SUPER ADMIN'},undefined,'setup');seedModule.seed(this.store,data.tenant,user,data.samples);return user;});
    else if(action==='user')result=this.store.user(data.id)||null;
+   else if(action==='public')result=modulesLib.publicAction(this.store,data.tenant,data.action,data.data||{});
    else if(action==='credential')result=data.username?this.db.prepare('SELECT * FROM users WHERE username=? AND active=1 AND deleted=0').get(data.username):this.db.prepare('SELECT * FROM users WHERE id=? AND active=1 AND deleted=0').get(data.id);
    else if(action==='addSession'){this.db.prepare('INSERT INTO sessions VALUES(?,?,?)').run(data.token,data.userId,data.expiry);result={ok:true};}
    else if(action==='deleteSession'){this.db.prepare('DELETE FROM sessions WHERE token=?').run(data.token);result={ok:true};}
@@ -69,7 +71,8 @@ export class MaralaPlatform extends DurableObject {
    let asset=p;
    if(p==='/workspace'||(p==='/'&&url.searchParams.has('workspace'))){if(s?.role!=='tenant'){res.writeHead(302,{Location:'/login'});return res.end();}if(platform.tenant(s.tenant_id).status==='blocked'){res.writeHead(302,{Location:'/account'});return res.end();}asset='/workspace.html';}
    else if(['/','/login','/register','/account','/paket-usaha'].includes(p))asset='/index.html';else if(p==='/admin')asset='/admin.html';
-   else if(!/^\/(?:assets\/[a-zA-Z0-9_.-]+|platform\.(?:js|css)|workspace(?:-menu)?\.(?:js|css)|contact\.(?:js|css)|packages\.(?:js|css)|integrated\.(?:js|css)|pos-ui\.js|bulk-edit\.js|attendance-ui\.js|styles\.css|icon\.svg|sw\.js)$/.test(p))domain.fail('Halaman tidak ditemukan.',404);
+   else if(/^\/u\/[a-z0-9-]+(?:\/[a-zA-Z0-9-]*)*$/.test(p))asset='/shop.html';
+   else if(!/^\/(?:assets\/[a-zA-Z0-9_.-]+|lines\.js|shop\.(?:js|css)|qr\.js|modules-ui\.js|platform\.(?:js|css)|workspace(?:-menu)?\.(?:js|css)|contact\.(?:js|css)|packages\.(?:js|css)|integrated\.(?:js|css)|pos-ui\.js|bulk-edit\.js|attendance-ui\.js|styles\.css|icon\.svg|sw\.js)$/.test(p))domain.fail('Halaman tidak ditemukan.',404);
    const assetURL=new URL(request.url);assetURL.pathname=asset;assetURL.search='';const response=await this.env.ASSETS.fetch(new Request(assetURL,{method:request.method}));res.writeHead(response.status,Object.fromEntries(response.headers));res.end(Buffer.from(await response.arrayBuffer()));
   },request,bytes);
  }catch(e){return jsonError(e);}});}

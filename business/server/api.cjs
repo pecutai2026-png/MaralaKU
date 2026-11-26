@@ -6,6 +6,22 @@ const IMPORT_FIELDS=['number','date','category','description','unit','amount','m
 function createHandler({store,secureCookies=false,setupTokenRequired=false,authorizeSetup,legacySeed,attempts=new Map()}){
  const gate=(u,m,a)=>{if(!store.can(u,m,a))fail('Anda tidak memiliki izin untuk tindakan ini.',403);};
  const userFor=req=>{const token=(req.headers.cookie||'').match(/(?:^|;\s*)marala_session=([a-f0-9]+)/)?.[1];if(!token)return null;const row=store.db.prepare('SELECT user_id FROM sessions WHERE token=? AND expires>?').get(crypto.createHash('sha256').update(token).digest('hex'),Date.now());return row?store.user(row.user_id):null;};
+ // Rute modul tambahan (lihat modules.cjs). Izin memakai kelompok izin yang sudah ada.
+ async function moduleRoutes(req,res,user,[kind,id,action],f,method){const m=require('./modules.cjs'),write=method!=='GET',group=m.KIND_GROUP[kind]||(kind==='settings'?'settings':kind==='summary'?'reports':null);if(!group)fail('Halaman tidak ditemukan.',404);
+  if(kind==='settings'){gate(user,'settings',write?'edit':'view');return json(res,m.settings(store,id,write?await body(req):undefined));}
+  if(kind==='summary'){gate(user,'reports','view');if(id==='commissions')return json(res,m.commissionReport(store,f.from,f.to));if(id==='report')return json(res,m.publicReport(store));if(id==='catalog')return json(res,m.catalog(store,f.engine==='jasa'?'jasa':'toko'));fail('Ringkasan tidak dikenal.',404);}
+  gate(user,group,method==='GET'?'view':method==='DELETE'?'delete':id&&!action?'edit':'create');
+  if(method==='GET'){if(id)return json(res,kind==='cycles'?{...m.get(store,kind,id),summary:m.cycleSummary(m.get(store,kind,id))}:m.get(store,kind,id));if(kind==='members')return json(res,m.members(store));if(kind==='cycles')return json(res,m.list(store,kind).map(c=>({...c,summary:m.cycleSummary(c)})));return json(res,m.list(store,kind));}
+  const d=method==='DELETE'?{}:await body(req);
+  if(kind==='orders'&&id&&action)return json(res,m.orderAction(store,id,action,d,user.id));
+  if(kind==='recurring'&&id==='generate')return json(res,m.generateRecurring(store,user.id));
+  if(kind==='registrations'&&id==='checkin')return json(res,m.checkin(store,d.code));
+  if(kind==='registrations'&&id&&action)return json(res,m.registrationAction(store,id,action));
+  if(['animals','cycles'].includes(kind)&&id&&action==='logs')return json(res,method==='DELETE'?m.removeLog(store,kind,id,f.log):m.addLog(store,kind,id,d),201);
+  if(method==='DELETE'&&id)return json(res,m.remove(store,kind,id));
+  if(method==='POST'&&!id)return json(res,m.save(store,kind,d,undefined,user.id),201);
+  if(method==='PUT'&&id)return json(res,m.save(store,kind,d,id,user.id));
+  fail('Tindakan tidak dikenal.',404);}
  const json=(res,data,status=200)=>{res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(data));};
  const body=async req=>{let b=Buffer.alloc(0);for await(const part of req){b=Buffer.concat([b,part]);if(b.length>8e6)fail('Data terlalu besar (maksimal 8 MB).',413);}try{return JSON.parse(b.toString()||'{}');}catch{fail('Format JSON tidak valid.');}};
  function archiveExport(res,saved,f){const kind=f.kind||'profit';if(!['profit','revenue','opnamereport'].includes(kind))fail('Jenis laporan tidak dikenal.');const rows=kind==='profit'?saved.sheets[0].rows.map(row=>row.map(v=>v&&typeof v==='object'?v.value:v)):kind==='revenue'?saved.revenueRows:saved.opnameRows;const format=f.format==='csv'?'csv':'xlsx';res.writeHead(200,{'Content-Type':format==='csv'?'text/csv; charset=utf-8':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','Content-Disposition':'attachment; filename="DISETUJUI_'+kind+'_'+saved.from+'_'+saved.to+'.'+format+'"','Cache-Control':'no-store'});return res.end(format==='csv'?csv(rows):kind==='profit'?require('./finance-export.cjs').workbook(saved.sheets):xlsx(rows));}
@@ -32,6 +48,7 @@ function createHandler({store,secureCookies=false,setupTokenRequired=false,autho
   if(p==='/api/login'&&method==='POST'){const ip=req.socket.remoteAddress,entry=attempts.get(ip)||{count:0,until:0};if(entry.until>Date.now())fail('Terlalu banyak percobaan. Coba lagi dalam 15 menit.',429);const d=await body(req),u=store.db.prepare('SELECT * FROM users WHERE username=? AND active=1 AND deleted=0').get(String(d.username||'').toLowerCase());if(!u||!passwordOK(d.password,u.password)){entry.count++;if(entry.count>=8)entry.until=Date.now()+900000;attempts.set(ip,entry);fail('Username atau password salah.',401);}attempts.delete(ip);const token=crypto.randomBytes(32).toString('hex');store.db.prepare('INSERT INTO sessions VALUES(?,?,?)').run(crypto.createHash('sha256').update(token).digest('hex'),u.id,Date.now()+12*3600000);res.setHeader('Set-Cookie',`marala_session=${token}; HttpOnly; SameSite=Strict; Path=/; Max-Age=43200${secureCookies?'; Secure':''}`);return json(res,{user:store.user(u.id)});}
   if(p.startsWith('/api/')){
    if(!user?.active)fail('Silakan masuk terlebih dahulu.',401);
+   if(p.startsWith('/api/m/'))return moduleRoutes(req,res,user,p.slice(7).split('/').filter(Boolean),f,method);
    if(p.startsWith('/api/attendance')){const a=require('./attendance.cjs');
     if(p==='/api/attendance'&&method==='GET')return json(res,a.view(store,user,f));
     if(p==='/api/attendance/punch'&&method==='POST')return json(res,a.punch(store,user,(await body(req)).action));
